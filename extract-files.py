@@ -68,6 +68,7 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so')
         .add_needed('libinput_shim.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed(
